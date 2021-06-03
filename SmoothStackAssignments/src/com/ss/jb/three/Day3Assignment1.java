@@ -20,11 +20,11 @@ public class Day3Assignment1 {
 	}
 	
 	public static File createFile() {
-		File file;
+		File file = new File("");
 		try {
 			 file = new File("C:\\Test");
-		} catch (FileNotFoundException e) {
-			
+		} catch (NullPointerException e) {
+			System.out.println("Invalid path, ");
 		}
 		return file;
 	}

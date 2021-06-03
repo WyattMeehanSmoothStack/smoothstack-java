@@ -22,8 +22,8 @@ public class Day2Assignment1 {
 	 * @param comArgs - command line arguments
 	 * @return the sum of command line arguments
 	 */
-	public static int sum(String[] comArgs) {
-		int sum = 0;
+	public static double sum(String[] comArgs) {
+		double sum = 0;
 		for (String arg : comArgs) {
 			try {
 				sum += Double.parseDouble(arg); 
