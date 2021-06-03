@@ -20,7 +20,6 @@ public class Triangle implements Shape {
 	/**
 	 * This method calculates area
 	 */
-	@Override
 	public void calculateArea() {
 		this.area = (base * height)/2;
 	}
@@ -29,7 +28,6 @@ public class Triangle implements Shape {
 	 * This method rounds the area to 2
 	 * decimal places and prints out the area
 	 */
-	@Override
 	public void display() {
 		System.out.println("The area of the triangle is: " + Math.round(area *100.0) / 100.0);
 	}

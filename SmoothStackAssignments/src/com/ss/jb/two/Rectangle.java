@@ -18,7 +18,6 @@ public class Rectangle implements Shape {
 	/**
 	 * This method calculates area
 	 */
-	@Override
 	public void calculateArea() {
 		this.area = length * width;
 	}
@@ -27,7 +26,6 @@ public class Rectangle implements Shape {
 	 * This method rounds the area to 2
 	 * decimal places and prints out the area
 	 */
-	@Override
 	public void display() {
 		System.out.println("The area of the rectangle is: " + Math.round(area *100.0) / 100.0);
 	}
