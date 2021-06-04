@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 /**
  * This class is for Java Basics Assignment 2
+ * 
  * @author Wyatt Meehan
  */
 
@@ -48,7 +49,7 @@ public class Assignment2 {
 
 		System.out.println("Sorry, the answer was: " + correctAns);
 	}
-	
+
 	/**
 	 * This method is for getting the users guess and making sure its valid
 	 * 

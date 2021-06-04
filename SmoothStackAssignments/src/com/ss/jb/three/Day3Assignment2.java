@@ -39,7 +39,7 @@ public class Day3Assignment2 {
 	 * @return - A validated text file the user wants to append to.
 	 */
 	public static File findFile() {
-		System.out.println("Please enter the path of the file you would like to append to!");
+		System.out.println("Please enter the path of the .txt file you would like to append to!");
 		File file;
 		while (true) {
 			String input = scanner.nextLine();
