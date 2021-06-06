@@ -56,6 +56,7 @@ public class Day4Assignment3 {
 		
 		prod.start();
 		cons.start();
+		
 	}
 
 	/**
