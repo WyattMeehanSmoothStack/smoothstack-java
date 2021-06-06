@@ -104,7 +104,6 @@ public class Day3Assignment3 {
 			if (Character.compare(next, arg) == 0) {
 				count++;
 			}
-			;
 		}
 		return count;
 	}

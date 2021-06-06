@@ -18,7 +18,6 @@ public class Day3Assignment1 {
 		if (fileList != null) {
 			printFileList(fileList);
 		}
-
 	}
 
 	/**
