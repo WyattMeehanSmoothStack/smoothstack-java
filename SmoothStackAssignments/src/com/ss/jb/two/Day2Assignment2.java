@@ -56,7 +56,7 @@ public class Day2Assignment2 {
 		int[][] twoArray = new int[arrRows][arrColumns]; // Creates a 5 by 5 2d Array
 		for (int i = 0; i < arrRows; i++) {
 			for (int j = 0; j < arrColumns; j++) {
-				twoArray[i][j] = rng.nextInt(maxValue - minValue - 1) + minValue; //populate the array with random values
+				twoArray[i][j] = rng.nextInt(maxValue - minValue + 1) + minValue; //populate the array with random values
 				System.out.printf("%-7s", twoArray[i][j]); // Print 2D array
 			}
 			System.out.println(""); // next row

@@ -10,10 +10,6 @@ package com.ss.jb.four;
  * @author Wyatt Meehan
  */
 public class Day4Assignment2 {
-	public Day4Assignment2() {
-
-	}
-
 	public static Day4Assignment2 object1 = new Day4Assignment2();
 	public static Day4Assignment2 object2 = new Day4Assignment2();
 
