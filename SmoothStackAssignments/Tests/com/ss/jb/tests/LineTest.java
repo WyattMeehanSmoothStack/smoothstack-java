@@ -32,13 +32,13 @@ public class LineTest {
 	@Test
 	public void testRealSlope() {
 		Line realLine = new Line(-21, 24, 10, -10);
-		assertEquals(-1.0967, realLine.getSlope(), 0.001);
+		assertEquals(-1.0967, realLine.getSlope(), 0.0001);
 	}
 	
 	@Test(expected = ArithmeticException.class)
 	public void testInfinitySlope() {
 		Line realLine = new Line(0, 0, 0, 10);
-		assertEquals(-1.0967, realLine.getSlope(), 0.001);
+		assertEquals(-1.0967, realLine.getSlope(), 0.0001);
 	}
 	
 	@Test
@@ -68,7 +68,7 @@ public class LineTest {
 	@Test
 	public void testReasDistance() {
 		Line realLine = new Line(-21, 24, 10, 1);
-		assertEquals(38.6005, realLine.getDistance(), 0.001);
+		assertEquals(38.6005, realLine.getDistance(), 0.0001);
 	}
 	
 	@Test
