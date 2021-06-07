@@ -44,9 +44,9 @@ public class Lambdas {
 	 * @return boolean - true or false
 	 */
 	public static LambdaInterface isPrime() {
-		return (i) -> {
-			for (int x = 2; i <= i / 2; ++i) {
-				if (i % x == 0) {
+		return (x) -> {
+			for (int i = 2; i * i <= x; i++) {
+				if (x % i == 0) {
 					return false;
 				}
 			}
