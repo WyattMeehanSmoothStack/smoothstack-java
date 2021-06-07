@@ -3,9 +3,6 @@
  */
 package com.ss.jb.week1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * @author Wyatt Meehan
@@ -17,30 +14,52 @@ public class Recursion {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[] testArray1 = new int[] { 2, 4, 8 };
-		int[] testArray2 = new int[] { 1, 2, 2, 2, 4, 8, 1 };
-		int[] testArray3 = new int[] { 2, 4, 8 };
-		groupSumClump(testArray2, 10);
+		int[] testArray1 = new int[] {2, 4, 8};
+		int[] testArray2 = new int[] {1, 2, 4, 8, 1};
+		int[] testArray3 = new int[] {2, 4, 4, 8};
+		
+		System.out.println(groupSumClump(0, testArray1, 10));
+		System.out.println(groupSumClump(0, testArray2, 14));
+		System.out.println(groupSumClump(0, testArray3, 14));
 	}
 
-	public static boolean groupSumClump(int[] arr, int target) {
-			List<Integer> list = new ArrayList<Integer>();
-			int prev = -1;
-			int sum = 0;
-			
-			for(int i = 0; i < arr.length - 1; i++) {
-				if(arr[i] == arr[i+1]) {
-					sum += arr[i] + arr[i + 1];
-				} else {
-					
-				}
-				
-				prev = arr[i];
-			}
-			
-			
-
-		return true;
+	/**
+	 * This method recursively calculates if it is possible for the sum of 
+	 * any combination of integers in an array to equally a set target. Any 
+	 * consecutive duplicates must be included or not included to the sum.
+	 * 
+	 * @param start
+	 * @param arr
+	 * @param target
+	 * @return
+	 */
+	public static boolean groupSumClump(int start, int[] arr, int target) {
+	   
+		//Base condition 
+		if(start >= arr.length) {
+			return target == 0; //Always true if target is 0
+		}
+	        
+	    int i = start;
+	    int sum = 0;
+	    
+	    //Iterate through array and sum up consecutive duplicates
+	    while(i < arr.length && arr[start] == arr[i]) {
+	        sum += arr[i];
+	        i++;
+	    }
+	    
+	    //Recursive call but exclude consecutive duplicates
+	    if(groupSumClump(i, arr, target - sum)) {
+	    	return true;
+	    }
+	        
+	    //Recursive call                             
+	    if(groupSumClump(i, arr, target)) {
+	    	return true;
+	    }
+	                                          
+	    return false;
 	}
 
 }

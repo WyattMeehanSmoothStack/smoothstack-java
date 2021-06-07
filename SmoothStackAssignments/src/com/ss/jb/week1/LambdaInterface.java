@@ -8,5 +8,5 @@ package com.ss.jb.week1;
  *
  */
 public interface LambdaInterface {
-	boolean is(int a);
+	boolean check(int a);
 }

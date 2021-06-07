@@ -3,11 +3,9 @@
  */
 package com.ss.jb.week1;
 
-import java.math.BigDecimal;
+
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+
 
 import com.ss.jb.four.Day4Assignment1;
 
@@ -20,7 +18,7 @@ import com.ss.jb.four.Day4Assignment1;
  */
 public class SampleSingleton {
 	
-	private static Connection conn = null;
+	volatile private static Connection conn = null;
 	
 	volatile private static SampleSingleton instance = null;
 	
@@ -52,6 +50,16 @@ public class SampleSingleton {
 		SampleSingleton test2 = getInstance();
 		System.out.println(test);
 		System.out.println(test2);
+	}
+
+
+	public static Connection getConn() {
+		return conn;
+	}
+
+
+	public static void setConn(Connection conn) {
+		SampleSingleton.conn = conn;
 	}
 
 }
