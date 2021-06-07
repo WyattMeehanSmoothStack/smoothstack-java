@@ -1,0 +1,61 @@
+1.	 Which class would you use to store your birthday in years,
+    	 months, days, seconds, and nanoseconds?
+
+	You could use LocalDateTime class or the ZoneDateTime class.
+	
+=========================================================================================
+	
+2. Given a random date, how would you find the date of the previous Thursday?
+
+Using temporalAdjuster. I have written a method demonstrating this in DateTimeAPI.java
+
+public static void previousThursday(LocalDate date) {
+		System.out.printf("The previous Thursday was: %s%n",
+		          date.with(TemporalAdjusters.previous(DayOfWeek.THURSDAY)));
+	}
+
+=========================================================================================
+
+3. 	 What is the difference between a ZoneId and a ZoneOffset?
+
+		ZoneId allows you to directly get a time zones time based on 
+		their ID while ZoneOffset is for doing operations offset 
+		from UTC time.
+		
+=========================================================================================
+
+4.  How would you convert an Instant to a ZonedDateTime?
+		 By getting the offset and adding it to the instant. See code below and
+		 in DateTimeAPI.java
+    How would you convert a ZonedDateTime to an Instant?
+    	By using the method .toInstant(). See code below and in DateTimeAPI.java.
+    
+    
+    public static void intantToZonedDate() {
+		Instant inst = Instant.now();
+		ZonedDateTime athensTime = inst.atZone(ZoneId.of("Europe/Athens"));
+		System.out.println("Instant time is: " + inst);
+		System.out.println("ZonedDateTime for Athens: " + athensTime);
+		System.out.println("Difference: " + athensTime.getOffset());
+	}
+	
+	 LocalDateTime dateTime = LocalDateTime.of(2018, Month.MAY, 7, 1, 52, 12);
+        ZonedDateTime athensTime = dateTime.atZone(ZoneId.of("Asia/Tokyo"));
+        System.out.println("ZonedDateTime : " + athensTime);
+        Instant instant = athensTime.toInstant();
+        System.out.println("Instant : " + instant);
+
+=========================================================================================
+    
+5.	 Write an example that, for a given year, reports the 
+	 length of each month within that year.
+	 
+=========================================================================================
+
+6.	Write an example that, for a given month of the current year,
+	lists all of the Mondays in that month.
+	
+=========================================================================================   
+
+7.  Write an example that tests whether a given date occurs on Friday the 13th.
+ 

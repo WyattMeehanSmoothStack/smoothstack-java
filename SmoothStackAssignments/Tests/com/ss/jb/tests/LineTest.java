@@ -79,7 +79,7 @@ public class LineTest {
 	}
 	
 	@Test
-	public void nottestParallelTo() {
+	public void testNotParallelTo() {
 		Line lineOne = new Line(0, 0, 10, 20);
 		Line lineTwo = new Line(0, 0, -20, 40);
 		assertEquals(false, lineOne.parallelTo(lineTwo));
