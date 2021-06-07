@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ss.jb.four.Day4Assignment1;
+
 import com.ss.jb.week1.Functional;
 
 public class FunctionalTests {
