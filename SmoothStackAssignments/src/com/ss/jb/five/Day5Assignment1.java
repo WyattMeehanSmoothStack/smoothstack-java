@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * 
+ * This class is for sorting arrays using Java 8 features
  * 
  * @author Wyatt Meehan
  */
@@ -57,7 +57,7 @@ public class Day5Assignment1 {
 	
 	public static void eFirstAlt(String[] arr) {
 		Arrays.sort(arr, Comparator.comparingInt(x -> (x.contains("e") ? 0 : 1)));
-		System.out.println("Contains \"e\" first: ");
+		System.out.println("Contains \"e\" first (alternate) : ");
 		System.out.println(Arrays.toString(arr) + "\n");
 	}
 
