@@ -1,7 +1,5 @@
 package com.ss.jb.tests.day4;
 
-
-
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
