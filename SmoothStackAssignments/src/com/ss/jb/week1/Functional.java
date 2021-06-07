@@ -18,9 +18,9 @@ public class Functional {
 	 * @param args - command line arguments
 	 */
 	public static void main(String[] args) {
-		System.out.println(right(posList()));
-		System.out.println(doubleInt(posList()));
-		System.out.println(removeX(stringList()));
+		System.out.println(rightDigit(posList()));
+		System.out.println(doubling(posList()));
+		System.out.println(noX(stringList()));
 		
 	}
 	
@@ -30,7 +30,7 @@ public class Functional {
 	 * @param list - incoming list
 	 * @return - list of rightmost digits 
 	 */
-	public static List<Integer> right(List<Integer> list) {
+	public static List<Integer> rightDigit(List<Integer> list) {
 		return list.stream().map(n -> (n % 10))
 							.collect(Collectors.toList());
 	}
@@ -41,7 +41,7 @@ public class Functional {
 	 * @param list - incoming list
 	 * @return - list of doubled integers
 	 */
-	public static List<Integer> doubleInt(List<Integer> list) {
+	public static List<Integer> doubling(List<Integer> list) {
 		return list.stream().map(n -> (n * 2))
 							.collect(Collectors.toList());
 	}
@@ -52,7 +52,7 @@ public class Functional {
 	 * @param list - incoming list
 	 * @return
 	 */
-	public static List<String> removeX(List<String> list) {
+	public static List<String> noX(List<String> list) {
 		return list.stream().map(s -> s.replace("x", ""))
 							.collect(Collectors.toList());
 	}
