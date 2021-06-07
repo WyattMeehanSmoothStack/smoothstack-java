@@ -48,14 +48,14 @@ public class LengthOfMonths {
 			try {
 				year = Integer.parseInt(str);
 			} catch (NumberFormatException e) {
-				System.out.println("Please enter year using numbers in format ****");
+				System.out.println("Please enter year using numbers.");
 				continue;
 			}
 
 			try {
 				break;
 			} catch (DateTimeException exc) {
-				System.out.println("Not a valid year, please enter a new year using numbers in format ****");
+				System.out.println("Not a valid year, please enter a new year using numbers.");
 
 			}
 		}
