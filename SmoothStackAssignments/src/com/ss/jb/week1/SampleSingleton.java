@@ -22,6 +22,10 @@ public class SampleSingleton {
 	
 	volatile private static SampleSingleton instance = null;
 	
+	private  SampleSingleton() {
+		
+	}
+	
 	/**
 	 * This method uses double check locking to create an instance of this singleton
 	 * class.
@@ -29,6 +33,8 @@ public class SampleSingleton {
 	 * @return - Instance of singleton class
 	 */
 	synchronized public static SampleSingleton getInstance() {
+		
+		
 		if (instance == null) { // 1st Check
 			synchronized (Day4Assignment1.class) { // Acquire Lock
 				if (instance == null) { // 2nd Check
