@@ -31,34 +31,39 @@ public class Day5Assignment1 {
 		return array;
 	}
 	
-	public static void shortToLong(String[] arr) {
+	public static String shortToLong(String[] arr) {
 		Arrays.sort(arr, (s1, s2) -> (s1.length() - s2.length()));
 		System.out.println("Short to long:");
 		System.out.println(Arrays.toString(arr) + "\n");
+		return Arrays.toString(arr);
 	}
 	
-	public static void longToShort(String[] arr) {
+	public static String longToShort(String[] arr) {
 		Arrays.sort(arr, (s1, s2) -> (s2.length() - s1.length()));
 		System.out.println("Long to short:");
 		System.out.println(Arrays.toString(arr) + "\n");
+		return Arrays.toString(arr);
 	}
 	
-	public static void alphabetical(String[] arr) {
+	public static String alphabetical(String[] arr) {
 		Arrays.sort(arr, (s1, s2) -> (s1.toUpperCase().charAt(0) - s2.toUpperCase().charAt(0)));
 		System.out.println("Alphebetical (first letter):");
 		System.out.println(Arrays.toString(arr) + "\n");
+		return Arrays.toString(arr);
 	}
 	
-	public static void eFirst(String[] arr) {
+	public static String eFirst(String[] arr) {
 		Arrays.sort(arr, (s1, s2) -> (s1.contains("e") && !s2.contains("e")) ? -1 : 1);
 		System.out.println("Contains \"e\" first: ");
 		System.out.println(Arrays.toString(arr) + "\n");
+		return Arrays.toString(arr);
 	}
 	
-	public static void eFirstAlt(String[] arr) {
+	public static String eFirstAlt(String[] arr) {
 		Arrays.sort(arr, Comparator.comparingInt(x -> (x.contains("e") ? 0 : 1)));
 		System.out.println("Contains \"e\" first (alternate) : ");
 		System.out.println(Arrays.toString(arr) + "\n");
+		return Arrays.toString(arr);
 	}
 
 	

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ss.jb.tests;
+package com.ss.jb.tests.day4;
 
 import org.junit.Test;
 
