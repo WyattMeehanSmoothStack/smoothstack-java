@@ -2,8 +2,6 @@ package com.ss.jb.test.week1;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-
-
 import com.ss.jb.week1.Lambdas;
 import com.ss.jb.week1.LambdaInterface;
 
