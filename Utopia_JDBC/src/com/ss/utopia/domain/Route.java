@@ -27,14 +27,14 @@ public class Route {
 	/**
 	 * @return the originAirort
 	 */
-	public Airport getOriginAirort() {
+	public Airport getOriginAirport() {
 		return originAirort;
 	}
 	/**
 	 * @param originAirort the originAirort to set
 	 */
-	public void setOriginAirort(Airport originAirort) {
-		this.originAirort = originAirort;
+	public void setOriginAirport(Airport originAirport) {
+		this.originAirort = originAirport;
 	}
 	/**
 	 * @return the destAirport
