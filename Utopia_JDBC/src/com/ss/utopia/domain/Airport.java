@@ -6,7 +6,7 @@ package com.ss.utopia.domain;
 import java.util.List;
 
 /**
- * @author meeha
+ * @author Wyatt Meehan
  *
  */
 public class Airport {

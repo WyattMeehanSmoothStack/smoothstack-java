@@ -8,5 +8,9 @@ package com.ss.utopia.domain;
  *
  */
 public class Flight {
+	private Integer id;
+	private Route route;
+	private Airplane airplane;
+	
 
 }
