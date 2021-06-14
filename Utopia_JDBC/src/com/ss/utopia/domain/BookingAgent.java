@@ -9,38 +9,39 @@ package com.ss.utopia.domain;
  */
 public class BookingAgent {
 
-	private User agent;
+	private User user;
 	private Booking booking;
-	
-	
-	
+
 	/**
 	 * @param agent
 	 * @param booking
 	 */
 	public BookingAgent(User agent, Booking booking) {
-		this.agent = agent;
+		this.user = agent;
 		this.booking = booking;
 	}
-	
+
 	/**
 	 * @return the agent
 	 */
 	public User getAgent() {
-		return agent;
+		return user;
 	}
+
 	/**
 	 * @param agent the agent to set
 	 */
 	public void setAgent(User agent) {
-		this.agent = agent;
+		this.user = agent;
 	}
+
 	/**
 	 * @return the booking
 	 */
 	public Booking getBooking() {
 		return booking;
 	}
+
 	/**
 	 * @param booking the booking to set
 	 */
@@ -48,6 +49,4 @@ public class BookingAgent {
 		this.booking = booking;
 	}
 
-
-	
 }

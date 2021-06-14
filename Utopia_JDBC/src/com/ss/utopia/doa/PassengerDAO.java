@@ -6,8 +6,8 @@ package com.ss.utopia.doa;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
-
 
 import com.ss.utopia.domain.Passenger;
 
@@ -22,27 +22,28 @@ public class PassengerDAO extends BaseDAO<Passenger> {
 	 */
 	public PassengerDAO(Connection conn) {
 		super(conn);
-		// TODO Auto-generated constructor stub
 	}
 
-	public void addPassenger(Passenger passenger) throws ClassNotFoundException, SQLException  {
-		save("insert into passenger (?, ?, ?, ?, ?, ?, ?)", new Object[] {passenger.ge, airport.getCity()});
+	public void addPassenger(Passenger pas) throws ClassNotFoundException, SQLException {
+		save("insert into passenger (?, ?, ?, ?, ?, ?, ?)", new Object[] { pas.getId(), pas.getBooking(),
+				pas.getGivenName(), pas.getFamilyName(), pas.getDob(), pas.getGender(), pas.getAddress() });
 	}
 
-	public void updatePassenger(Passenger airport) throws ClassNotFoundException, SQLException {
-		save("update airport set iata_id = ? " + "and city = ? where iata_id = ?",
-				new Object[] { airport.getAirportID(),
-						airport.getCity(), airport.getAirportID() });
+	public void updatePassenger(Passenger passenger) throws ClassNotFoundException, SQLException {
+		save("update passenger set given_name = ?, family_name = ?, dob = ?, gender = ?, address = ?",
+				new Object[] { passenger.getGivenName(), passenger.getFamilyName(), passenger.getDob(),
+						passenger.getGender(), passenger.getAddress() });
+
 	}
 
 	public void deletePassenger(Passenger passenger) throws ClassNotFoundException, SQLException {
-		save("delete from route where id = ?", new Object[] { passenger.getPassengerID() });
+		save("delete from passenger where id=?", new Object[] { passenger.getId() });
 	}
 
 	public List<Passenger> readAllRoutes() throws ClassNotFoundException, SQLException {
 		return read("select * from airport", null);
 	}
-	
+
 	public Passenger readPassengerId(String passId) throws ClassNotFoundException, SQLException {
 		List<Passenger> passengers = read("select * from passenger where id = ?", new Object[] { passId });
 		if (passengers.size() < 1) {
@@ -51,8 +52,20 @@ public class PassengerDAO extends BaseDAO<Passenger> {
 		return passengers.get(0);
 	}
 
-	@Override
 	public List<Passenger> extractData(ResultSet rs) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		BookingDAO bdao = new BookingDAO(conn);
+		List<Passenger> passengers = new ArrayList<>();
+		while (rs.next()) {
+			Passenger passenger = new Passenger();
+			passenger.setId(rs.getInt("id"));
+			passenger.setBooking(bdao.readBookingById(rs.getInt("booking_id")));
+			passenger.setGivenName(rs.getString("given_name"));
+			passenger.setFamilyName(rs.getString("family_name"));
+			passenger.setDob(rs.getDate("dob"));
+			passenger.setGender(rs.getString("gender"));
+			passenger.setAddress(rs.getString("address"));
+			passengers.add(passenger);
+		}
+		return passengers;
 	}
+}

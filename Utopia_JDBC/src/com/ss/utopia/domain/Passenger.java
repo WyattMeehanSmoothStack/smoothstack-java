@@ -3,45 +3,71 @@
  */
 package com.ss.utopia.domain;
 
+import java.sql.Date;
+
 /**
- * @author meeha
+ * @author Wyatt Meehan
  *
  */
 public class Passenger {
-	private int id;
-	private int bookingId;
+	private Integer id;
+	private Booking booking;
 	private String givenName;
 	private String familyName;
-	private String date;
+	private Date dob;
 	private String gender;
 	private String address;
 
 	/**
+	 * @param id
+	 * @param booking
+	 * @param givenName
+	 * @param familyName
+	 * @param dob
+	 * @param gender
+	 * @param address
+	 */
+	public Passenger(Integer id, Booking booking, String givenName, String familyName, Date dob, String gender,
+			String address) {
+		this.id = id;
+		this.booking = booking;
+		this.givenName = givenName;
+		this.familyName = familyName;
+		this.dob = dob;
+		this.gender = gender;
+		this.address = address;
+	}
+	
+	public Passenger() {
+		
+	}
+
+	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	/**
-	 * @return the bookingId
+	 * @return the booking
 	 */
-	public int getBookingId() {
-		return bookingId;
+	public Booking getBooking() {
+		return booking;
 	}
 
 	/**
-	 * @param bookingId the bookingId to set
+	 * @param booking the booking to set
 	 */
-	public void setBookingId(int bookingId) {
-		this.bookingId = bookingId;
+	public void setBooking(Booking booking) {
+		this.booking = booking;
 	}
 
 	/**
@@ -73,17 +99,17 @@ public class Passenger {
 	}
 
 	/**
-	 * @return the date
+	 * @return the dob
 	 */
-	public String getDate() {
-		return date;
+	public Date getDob() {
+		return dob;
 	}
 
 	/**
-	 * @param date the date to set
+	 * @param dob the dob to set
 	 */
-	public void setDate(String date) {
-		this.date = date;
+	public void setDob(Date dob) {
+		this.dob = dob;
 	}
 
 	/**

@@ -6,21 +6,23 @@ package com.ss.utopia.main;
 import java.util.Scanner;
 
 /**
- * @author Wyatt Meehan1
+ * @author Wyatt Meehan
  *
  */
-public class Main {
-	static Scanner scanner = new Scanner(System.in);
-
+public class FlightsCrud {
+	Scanner scanner;
+	
 	/**
-	 * @param args
+	 * @param scanner2
 	 */
-	public static void main(String[] args) {
-		mainMenu();
+	public FlightsCrud(Scanner scanner) {
+		this.scanner = scanner;
 	}
 
-	public static void mainMenu() {
-		System.out.println("Welcome to the Utopia Management System. Which category of a user are you?");
+	/**
+	 * 
+	 */
+	public void menu() {
 		boolean repeat = true;
 		while (repeat) {
 			System.out.println("1) Employee/Agent");
@@ -32,15 +34,11 @@ public class Main {
 				System.out.println("Employee/Agent comming soon! Please select another option.");
 				continue;
 			case "2":
-				System.out.println("Administrator selected...\n");
-				Admin admin = new Admin(scanner);
-				admin.menu();
+				
 				repeat = false;
 				break;
 			case "3":
-				System.out.println("Traveler selected...");
-				Traveler trav = new Traveler(scanner);
-				trav.menu();
+				
 				repeat = false;
 				break;
 			default:
@@ -48,9 +46,7 @@ public class Main {
 				continue;
 			}
 		}
-
+		
 	}
-
-	
 
 }

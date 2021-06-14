@@ -23,7 +23,6 @@ public class AirportDAO extends BaseDAO<Airport> {
 	 */
 	public AirportDAO(Connection conn) {
 		super(conn);
-
 	}
 	
 	public void addAirport(Airport airport) throws ClassNotFoundException, SQLException  {
