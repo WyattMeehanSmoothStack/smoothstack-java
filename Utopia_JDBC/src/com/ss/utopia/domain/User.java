@@ -15,26 +15,8 @@ public class User {
 	private String userName;
 	private String email;
 	private String phone;
-	
-	/**
-	 * @param id
-	 * @param userRole
-	 * @param givenName
-	 * @param familyName
-	 * @param userName
-	 * @param email
-	 * @param phone
-	 */
-	public User(Integer id, UserRole userRole, String givenName, String familyName, String userName, String email,
-			String phone) {
-		this.id = id;
-		this.userRole = userRole;
-		this.givenName = givenName;
-		this.familyName = familyName;
-		this.userName = userName;
-		this.email = email;
-		this.phone = phone;
-	}
+	private String password;
+
 	/**
 	 * @return the id
 	 */
@@ -118,6 +100,12 @@ public class User {
 	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 }

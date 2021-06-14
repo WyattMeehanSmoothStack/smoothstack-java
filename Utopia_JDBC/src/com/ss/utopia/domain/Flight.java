@@ -6,7 +6,7 @@ package com.ss.utopia.domain;
 import java.sql.Date;
 
 /**
- * @author meeha
+ * @author Wyatt Meehan
  *
  */
 public class Flight {

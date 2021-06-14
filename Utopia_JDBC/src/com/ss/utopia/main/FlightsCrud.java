@@ -3,11 +3,11 @@
  */
 package com.ss.utopia.main;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.ss.utopia.domain.Airport;
 import com.ss.utopia.domain.Flight;
 import com.ss.utopia.service.AdminService;
 
@@ -15,7 +15,7 @@ import com.ss.utopia.service.AdminService;
  * @author Wyatt Meehan
  *
  */
-public class FlightsCrud extends CrudHelper{
+public class FlightsCrud extends CrudHelper {
 	static Scanner scanner;
 	AdminService as = new AdminService();
 
@@ -41,10 +41,28 @@ public class FlightsCrud extends CrudHelper{
 			switch (input) {
 			case "1":
 				Flight fli1 = new Flight();
-				fli1.setId(getExInteger("Please enter a flight id of length 3", 3));
-				fli1.setAirplane(getAirplane("Please enter the airplane number"));
-			//	fli1.setDepartureTime(input);
-				fli1.setReservedSeats(null);
+	//			fli1.setAirplane(getAirplane("Please enter the airplane number"));
+				System.out.println("Please choose a date for departure by typing the number befor the date!");
+
+				Date date1 = Date.valueOf("2021-08-01");
+				Date date2 = Date.valueOf("2021-09-01");
+				Date date3 = Date.valueOf("2021-10-01");
+
+				System.out.println("1) " + date1.toString());
+				System.out.println("2) " + date2.toString());
+				System.out.println("3) " + date3.toString());
+				String input2 = scanner.nextLine();
+				switch (input2) {
+				case "1":
+					fli1.setDepartureTime(date1);
+					break;
+				case "2":
+					fli1.setDepartureTime(date1);
+					break;
+				case "3":
+					fli1.setDepartureTime(date3);
+				}
+				fli1.setReservedSeats(getInteger("Please enter the number of reserved seats", 1000));
 				fli1.setRoute(null);
 				fli1.setSeatPrice(null);
 				repeat = false;
@@ -72,5 +90,5 @@ public class FlightsCrud extends CrudHelper{
 		}
 
 	}
-	
+
 }

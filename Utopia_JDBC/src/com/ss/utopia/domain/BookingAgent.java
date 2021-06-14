@@ -13,15 +13,6 @@ public class BookingAgent {
 	private Booking booking;
 
 	/**
-	 * @param agent
-	 * @param booking
-	 */
-	public BookingAgent(User agent, Booking booking) {
-		this.user = agent;
-		this.booking = booking;
-	}
-
-	/**
 	 * @return the agent
 	 */
 	public User getAgent() {

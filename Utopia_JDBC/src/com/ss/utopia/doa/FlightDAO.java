@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.ss.utopia.domain.Flight;
-import com.ss.utopia.domain.Route;
 
 /**
  * @author Wyatt Meehan
@@ -46,6 +45,16 @@ public class FlightDAO extends BaseDAO<Flight> {
 	public List<Flight> readAllFlights() throws ClassNotFoundException, SQLException {
 		return read("select * from flight", null);
 	}
+	
+	public Flight readFlightById(int id) throws ClassNotFoundException, SQLException {
+		List<Flight> flights = readAllFlights();
+		for(Flight flight: flights) {
+			if(flight.getId() == id) {
+				return flight;
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public List<Flight> extractData(ResultSet rs) throws ClassNotFoundException, SQLException {
@@ -53,7 +62,7 @@ public class FlightDAO extends BaseDAO<Flight> {
 		while (rs.next()) {
 			Flight flight = new Flight();
 			flight.setId(rs.getInt("id"));
-			flight.setRoute((Route) rs.getObject("route_id"));
+		//	flight.setRoute((Route) rs.getObject("route_id"));
 			flight.setDepartureTime(rs.getDate("departure_time"));
 			flight.setSeatPrice(rs.getFloat("seat_price"));
 		}

@@ -12,15 +12,6 @@ public class FlightBookings {
 	private Flight flight;
 
 	/**
-	 * @param booking
-	 * @param flight
-	 */
-	public FlightBookings(Booking booking, Flight flight) {
-		this.booking = booking;
-		this.flight = flight;
-	}
-
-	/**
 	 * @return the booking
 	 */
 	public Booking getBooking() {

@@ -5,8 +5,6 @@ package com.ss.utopia.main;
 
 import java.util.Scanner;
 
-import com.ss.utopia.domain.Airplane;
-
 /**
  * @author Wyatt Meehan
  *
@@ -40,6 +38,19 @@ public class CrudHelper {
 		}
 	}
 	
+	public static Integer getInteger(String question, int maxLength) {
+		Integer answer;
+		while (true) {
+			System.out.println(question);
+			answer = scanner.nextInt();
+			if (String.valueOf(answer).length() < maxLength) {
+				return answer;
+			} else {
+				System.out.println("Response does not match field, please resond with an Integer of length less than " + maxLength);
+			}
+		}
+	}
+	
 	public static Integer getExInteger(String question, int length) {
 		Integer answer;
 		while (true) {
@@ -53,12 +64,7 @@ public class CrudHelper {
 		}
 	}
 	
-	public static Airplane getAirplane(String question) {
-		Airplane airplane = new Airplane();
-			System.out.println(question);
-			airplane.setId(scanner.nextInt());
-		return airplane;
-	}
+	
 
 
 }

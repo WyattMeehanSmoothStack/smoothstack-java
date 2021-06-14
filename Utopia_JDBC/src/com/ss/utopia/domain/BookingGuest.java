@@ -13,17 +13,6 @@ public class BookingGuest {
 	private String contactPhone;
 
 	/**
-	 * @param booking
-	 * @param contactEmail
-	 * @param contactPhone
-	 */
-	public BookingGuest(Booking booking, String contactEmail, String contactPhone) {
-		this.booking = booking;
-		this.contactEmail = contactEmail;
-		this.contactPhone = contactPhone;
-	}
-
-	/**
 	 * @return the booking
 	 */
 	public Booking getBooking() {

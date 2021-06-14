@@ -6,6 +6,7 @@ package com.ss.utopia.doa;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ss.utopia.domain.FlightBookings;
@@ -37,9 +38,17 @@ public class FlightBookingsDAO extends BaseDAO<FlightBookings> {
 	}
 
 	@Override
-	public List extractData(ResultSet rs) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<FlightBookings> extractData(ResultSet rs) throws ClassNotFoundException, SQLException {
+		BookingDAO book = new BookingDAO(conn);
+		FlightDAO flight = new FlightDAO(conn);
+		List<FlightBookings> fbS = new ArrayList<>();
+		while(rs.next()) {
+			FlightBookings fb = new FlightBookings();
+			fb.setBooking(book.readBookingById(rs.getInt("booking_id")));
+			fb.setFlight(flight.readFlightById(rs.getInt("flight_id")));
+			fbS.add(fb);
+		}
+		return fbS;
 	}
 
 }

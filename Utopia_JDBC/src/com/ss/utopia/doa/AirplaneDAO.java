@@ -25,8 +25,8 @@ public class AirplaneDAO extends BaseDAO<Airplane> {
 	}
 	
 	public void addAirplane(Airplane ap) throws ClassNotFoundException, SQLException {
-		save("insert into airplane (id, type_id) values (?, ?)", 
-				new Object[] {ap.getId(), ap.getType().getId()});
+		saveWithPk("insert into airplane (type_id) values (?)", 
+				new Object[] {ap.getType().getId()});
 	}
 	
 	public void updateAirplane(Airplane ap) throws ClassNotFoundException, SQLException {

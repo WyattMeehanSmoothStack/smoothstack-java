@@ -12,16 +12,6 @@ public class BookingPayment {
 	private String stripeId;
 	private Integer refunded;
 
-	/**
-	 * @param booking
-	 * @param stripeId
-	 * @param refunded
-	 */
-	public BookingPayment(Booking booking, String stripeId, Integer refunded) {
-		this.booking = booking;
-		this.stripeId = stripeId;
-		this.refunded = refunded;
-	}
 
 	/**
 	 * @return the booking

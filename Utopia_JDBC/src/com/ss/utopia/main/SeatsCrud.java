@@ -5,25 +5,24 @@ package com.ss.utopia.main;
 
 import java.util.Scanner;
 
+import com.ss.utopia.service.AdminService;
+
 /**
- * @author meeha
+ * @author Wyatt Meehan
  *
  */
 public class SeatsCrud {
-	Scanner scanner;
+	static Scanner scanner;
+	AdminService as = new AdminService();
 	
-	/**
-	 * @param scanner2
-	 */
 	public SeatsCrud(Scanner scanner) {
-		this.scanner = scanner;
+		SeatsCrud.scanner = scanner;
 	}
 
-	/**
-	 * 
-	 */
+
 	public void menu() {
-		// TODO Auto-generated method stub
+		System.out.println(as.listFlights());
+		
 		
 	}
 
