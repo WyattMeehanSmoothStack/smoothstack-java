@@ -25,7 +25,7 @@ public class PassengerDAO extends BaseDAO<Passenger> {
 	}
 
 	public void addPassenger(Passenger pas) throws ClassNotFoundException, SQLException {
-		save("insert into passenger (?, ?, ?, ?, ?, ?, ?)", new Object[] { pas.getId(), pas.getBooking(),
+		saveWithPk("insert into passenger (booking_id, given_name, family_name, dob, gender, address) values (?, ?, ?, ?, ?, ?)", new Object[] {pas.getBooking(),
 				pas.getGivenName(), pas.getFamilyName(), pas.getDob(), pas.getGender(), pas.getAddress() });
 	}
 
@@ -37,7 +37,7 @@ public class PassengerDAO extends BaseDAO<Passenger> {
 	}
 
 	public void deletePassenger(Passenger passenger) throws ClassNotFoundException, SQLException {
-		save("delete from passenger where id=?", new Object[] { passenger.getId() });
+		save("delete from passenger where id = ?", new Object[] { passenger.getId() });
 	}
 
 	public List<Passenger> readAllRoutes() throws ClassNotFoundException, SQLException {

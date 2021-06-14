@@ -38,12 +38,15 @@ public class TAPCrud extends CrudHelper {
 			switch (input) {
 			case "1":
 				Passenger pass1 = new Passenger();
-				pass1.setId(getExInteger("Please enter a 3 digit number for your passengers ID!", 3));
 				Booking book = new Booking();
 				book.setId(getExInteger("Please enter a unique 3 digit number for your passengers booking!", 3));
+				
 				pass1.setBooking(book);
-				pass1.setGivenName(getString("Please enter a first name for your passenger!", 255));
-				pass1.setFamilyName(getString("Please enter a family name for your passenger!", 255));
+				String givenName = getString("Please enter a first name for your passenger!", 255);
+				scanner.nextLine();
+				pass1.setGivenName(givenName);
+				String falmilyName = (getString("Please enter a family name for your passenger!", 255));
+				pass1.setFamilyName(falmilyName);
 				Date dob = new Date(0);
 				//Validation loop
 				boolean repeat1 = true;
@@ -61,7 +64,7 @@ public class TAPCrud extends CrudHelper {
 				pass1.setDob(dob);
 				pass1.setGender(getString("Please enter a gender for your passenger!", 45));
 				pass1.setAddress(getString("Please enter a address for your passenger!", 45));
-				
+				as.addPassenger(pass1);
 				repeat = false;
 				break;
 
