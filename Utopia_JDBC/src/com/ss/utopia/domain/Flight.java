@@ -3,6 +3,8 @@
  */
 package com.ss.utopia.domain;
 
+import java.sql.Date;
+
 /**
  * @author meeha
  *
@@ -11,27 +13,9 @@ public class Flight {
 	private Integer id;
 	private Route route;
 	private Airplane airplane;
-	private String departureTime;
+	private Date departureTime;
 	private Integer reservedSeats;
 	private Float seatPrice;
-
-	/**
-	 * @param id
-	 * @param route
-	 * @param airplane
-	 * @param departureTime
-	 * @param reservedSeats
-	 * @param seatPrice
-	 */
-	public Flight(Integer id, Route route, Airplane airplane, String departureTime, Integer reservedSeats,
-			Float seatPrice) {
-		this.id = id;
-		this.route = route;
-		this.airplane = airplane;
-		this.departureTime = departureTime;
-		this.reservedSeats = reservedSeats;
-		this.seatPrice = seatPrice;
-	}
 
 	/**
 	 * @return the id
@@ -78,15 +62,15 @@ public class Flight {
 	/**
 	 * @return the departureTime
 	 */
-	public String getDepartureTime() {
+	public Date getDepartureTime() {
 		return departureTime;
 	}
 
 	/**
-	 * @param departureTime the departureTime to set
+	 * @param date the departureTime to set
 	 */
-	public void setDepartureTime(String departureTime) {
-		this.departureTime = departureTime;
+	public void setDepartureTime(Date date) {
+		this.departureTime = date;
 	}
 
 	/**

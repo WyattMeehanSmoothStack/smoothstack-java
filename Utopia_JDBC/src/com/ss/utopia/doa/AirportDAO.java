@@ -13,7 +13,7 @@ import com.ss.utopia.domain.Airport;
 
 
 /**
- * @author meeha
+ * @author Wyatt Meehan
  *
  */
 public class AirportDAO extends BaseDAO<Airport> {
@@ -26,22 +26,23 @@ public class AirportDAO extends BaseDAO<Airport> {
 	}
 	
 	public void addAirport(Airport airport) throws ClassNotFoundException, SQLException  {
-		save("insert into airport (?, ?)", new Object[] {airport.getAirportID(), airport.getCity()});
+		save("insert into airport (iata_id, city) values (?, ?)", new Object[] {airport.getAirportID(), airport.getCity()});
 	}
 
-	public void updateAirport(Airport airport) throws ClassNotFoundException, SQLException {
-		save("update airport set iata_id = ? " + "and city = ? where iata_id = ?",
+	public void updateAirport(Airport airport, String code) throws ClassNotFoundException, SQLException {
+		save("update airport set iata_id = ? " + ", city = ? where iata_id = ?",
 				new Object[] { airport.getAirportID(),
-						airport.getCity(), airport.getAirportID() });
+						airport.getCity(), code });
 	}
 
-	public void deleteRoute(Airport airport) throws ClassNotFoundException, SQLException {
-		save("delete from route where id = ?", new Object[] { airport.getAirportID() });
+	public void deleteAirport(Airport airport) throws ClassNotFoundException, SQLException {
+		save("delete from airport where iata_id = ?", new Object[] { airport.getAirportID() });
 	}
 
-	public List<Airport> readAllRoutes() throws ClassNotFoundException, SQLException {
+	public List<Airport> readAllAirports() throws ClassNotFoundException, SQLException {
 		return read("select * from airport", null);
 	}
+
 	
 	public Airport readAirportId(String airportCode) throws ClassNotFoundException, SQLException {
 		List<Airport> airports = read("select * from airport where iata_id = ?", new Object[] { airportCode });
@@ -59,8 +60,6 @@ public class AirportDAO extends BaseDAO<Airport> {
 			Airport airport = new Airport();
 			airport.setAirportID(rs.getString("iata_id"));
 			airport.setCity(rs.getString("city"));
-			// circular dependency issue
-			// airport.setRoutes(rdao.readRoutesByAirportCode(airport.getAirportCode()));
 			airports.add(airport);
 		}
 		return airports;

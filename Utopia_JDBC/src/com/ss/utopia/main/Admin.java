@@ -3,6 +3,7 @@
  */
 package com.ss.utopia.main;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
@@ -20,9 +21,10 @@ public class Admin {
 	}
 
 	/**
+	 * @throws SQLException 
 	 * 
 	 */
-	public void menu() {
+	public void menu() throws SQLException {
 		boolean repeat = true;
 		while (repeat) {
 			System.out.println("Please select the category you would like to alter.");

@@ -9,19 +9,9 @@ package com.ss.utopia.domain;
  */
 public class Booking {
 	private Integer id;
-	private Boolean isActive;
+	private Integer isActive;
 	private String confirmationCode;
 
-	/**
-	 * @param id
-	 * @param isActive
-	 * @param confirmationCode
-	 */
-	public Booking(Integer id, Boolean isActive, String confirmationCode) {
-		this.id = id;
-		this.isActive = isActive;
-		this.confirmationCode = confirmationCode;
-	}
 
 	/**
 	 * @return the id
@@ -40,14 +30,14 @@ public class Booking {
 	/**
 	 * @return the isActive
 	 */
-	public Boolean getIsActive() {
+	public Integer getIsActive() {
 		return isActive;
 	}
 
 	/**
 	 * @param isActive the isActive to set
 	 */
-	public void setIsActive(Boolean isActive) {
+	public void setIsActive(Integer isActive) {
 		this.isActive = isActive;
 	}
 

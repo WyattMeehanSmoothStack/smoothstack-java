@@ -22,6 +22,7 @@ public abstract class BaseDAO<T> {
 		this.conn = conn;
 	}
 	public void save(String sql, Object[] vals) throws SQLException, ClassNotFoundException {
+		
 		PreparedStatement prep = conn.prepareStatement(sql);
 		if(vals!=null) {
 			int ct = 1;
@@ -30,6 +31,7 @@ public abstract class BaseDAO<T> {
 				ct++;
 			}
 		}
+		System.out.println(prep);
 		prep.executeUpdate();
 	}
 	

@@ -3,10 +3,11 @@
  */
 package com.ss.utopia.main;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
- * @author Wyatt Meehan1
+ * @author Wyatt Meehan
  *
  */
 public class Main {
@@ -14,12 +15,13 @@ public class Main {
 
 	/**
 	 * @param args
+	 * @throws SQLException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		mainMenu();
 	}
 
-	public static void mainMenu() {
+	public static void mainMenu() throws SQLException {
 		System.out.println("Welcome to the Utopia Management System. Which category of a user are you?");
 		boolean repeat = true;
 		while (repeat) {

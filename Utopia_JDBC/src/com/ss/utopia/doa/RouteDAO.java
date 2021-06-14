@@ -25,7 +25,7 @@ public class RouteDAO extends BaseDAO<Route> {
 	}
 
 	public void addRoute(Route route) throws ClassNotFoundException, SQLException  {
-		save("insert into route (?, ?)", new Object[] {route.getOriginAirport().getAirportID(), route.getDestAirport().getAirportID()});
+		save("insert into route (id, origin_id, destination_id) values (?, ?)", new Object[] {route.getOriginAirport().getAirportID(), route.getDestAirport().getAirportID()});
 	}
 
 	public void updateRoute(Route route) throws ClassNotFoundException, SQLException {
@@ -51,6 +51,7 @@ public class RouteDAO extends BaseDAO<Route> {
 		List<Route> routes = new ArrayList<>();
 		while (rs.next()) {
 			Route route = new Route();
+			route.setRouteID(rs.getInt("id"));
 			route.setOriginAirport(aDao.readAirportId(rs.getString("origin_id")));
 			route.setDestAirport(aDao.readAirportId(rs.getString("destination_id")));
 			routes.add(route);

@@ -19,6 +19,10 @@ public class Airplane {
 		this.id = id;
 		this.typeId = typeId;
 	}
+	
+	public Airplane() {
+		
+	}
 
 	/**
 	 * @return the id
@@ -37,7 +41,7 @@ public class Airplane {
 	/**
 	 * @return the typeId
 	 */
-	public AirplaneType getTypeId() {
+	public AirplaneType getType() {
 		return typeId;
 	}
 

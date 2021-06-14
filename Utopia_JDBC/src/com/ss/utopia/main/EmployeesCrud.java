@@ -6,7 +6,7 @@ package com.ss.utopia.main;
 import java.util.Scanner;
 
 /**
- * @author meeha
+ * @author Wyatt Meehan
  *
  */
 public class EmployeesCrud {
