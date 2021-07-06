@@ -1,8 +1,10 @@
 package com.ss.jb.test.week1;
 
 import org.junit.Test;
+
+import com.ss.jb.five.Recursion;
+
 import static org.junit.Assert.assertEquals;
-import com.ss.jb.week1.Recursion;
 
 
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ss.jb.week1;
+package com.ss.jb.five;
 
 /**
  * @author Wyatt Meehan
@@ -23,7 +23,7 @@ public class Lambdas {
 		
 		lamInter = Lambdas.isOdd();
 		result = Lambdas.checker(lamInter, odd);
-		answer = (result) ? "Numer is odd" : "Number is even";
+		answer = (result) ? "Number is odd" : "Number is even";
 		
 		System.out.println(answer);
 

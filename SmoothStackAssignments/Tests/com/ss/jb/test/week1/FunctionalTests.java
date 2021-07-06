@@ -1,11 +1,12 @@
 package com.ss.jb.test.week1;
 
 import org.junit.Test;
+
+import com.ss.jb.five.Functional;
+
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.ss.jb.week1.Functional;
 
 public class FunctionalTests {
 	@Test

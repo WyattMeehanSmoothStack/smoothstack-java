@@ -13,6 +13,9 @@ public class Day4Assignment1 {
 
 	volatile public static Day4Assignment1 instance = null;
 
+	/**
+	 * Private constructor blocks attempts to create instances using a constructor
+	 */
 	private Day4Assignment1() {
 
 	}

@@ -1,9 +1,11 @@
 package com.ss.jb.test.week1;
 
 import org.junit.Test;
+
+import com.ss.jb.five.LambdaInterface;
+import com.ss.jb.five.Lambdas;
+
 import static org.junit.Assert.assertEquals;
-import com.ss.jb.week1.Lambdas;
-import com.ss.jb.week1.LambdaInterface;
 
 public class LambdasTest {
 

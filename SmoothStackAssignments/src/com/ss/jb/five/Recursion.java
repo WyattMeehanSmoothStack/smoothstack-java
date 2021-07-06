@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ss.jb.week1;
+package com.ss.jb.five;
 
 /**
  * @author Wyatt Meehan
