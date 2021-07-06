@@ -3,13 +3,16 @@ package com.ss.jb.two;
 import java.util.Random;
 
 /**
+ * This class is for solving Day 2 Assignment 2 in Java Basics. It finds first
+ * max value in a randomly generated 2D array.
+ * 
  * Note to evaluators: I know how to make these processes less expensive. For
  * instance I could have found the max and generated the 2D array in the same
  * loops. It was a tradeoff I made for readability that I'm not sure about and
  * would appreciate some feedback. Thanks! - Wyatt
  * 
- * @author Wyatt Meehan This class is for solving Day 2 Assignment 2 in Java
- *         Basics. It finds first max value in a randomly generated 2D array.
+ * @author Wyatt Meehan
+ * 
  */
 public class Day2Assignment2 {
 	static Random rng = new Random();
@@ -56,7 +59,8 @@ public class Day2Assignment2 {
 		int[][] twoArray = new int[arrRows][arrColumns]; // Creates a 5 by 5 2d Array
 		for (int i = 0; i < arrRows; i++) {
 			for (int j = 0; j < arrColumns; j++) {
-				twoArray[i][j] = rng.nextInt(maxValue - minValue + 1) + minValue; //populate the array with random values
+				twoArray[i][j] = rng.nextInt(maxValue - minValue + 1) + minValue; // populate the array with random
+																					// values
 				System.out.printf("%-7s", twoArray[i][j]); // Print 2D array
 			}
 			System.out.println(""); // next row
@@ -64,4 +68,5 @@ public class Day2Assignment2 {
 		return twoArray;
 
 	}
+
 }

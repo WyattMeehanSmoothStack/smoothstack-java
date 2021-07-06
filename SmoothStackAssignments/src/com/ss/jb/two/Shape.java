@@ -3,6 +3,7 @@
  */
 package com.ss.jb.two;
 
+
 /**
  * @author Wyatt Meehan
  * This shape interface is meant to provide

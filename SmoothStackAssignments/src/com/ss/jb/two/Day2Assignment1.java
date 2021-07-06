@@ -1,7 +1,7 @@
 package com.ss.jb.two;
 
 /**
- * @author Wyatt Meehan 
+ * @author  Wyatt Meehan 
  * This class is for Java Basics Day 2 Assignment 1.
  * Its function is to add command line arguments together.
  */
@@ -17,7 +17,7 @@ public class Day2Assignment1 {
 	}
 
 	/**
-	 * This method adds any integer command line arguments together. It 
+	 * This method adds any number command line arguments together. It 
 	 * will exclude any Strings and print them to the console.
 	 * @param comArgs - command line arguments
 	 * @return the sum of command line arguments
