@@ -5,8 +5,11 @@ package com.ss.utopia.main;
 
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import com.ss.utopia.domain.Airport;
 import com.ss.utopia.domain.Booking;
 import com.ss.utopia.domain.Passenger;
 import com.ss.utopia.service.AdminService;
@@ -69,17 +72,23 @@ public class TAPCrud extends CrudHelper {
 				break;
 
 			case "2":
-
 				repeat = false;
 				break;
 
 			case "3":
-
+				Passenger pass3 = new Passenger();
+				pass3.setId(getExInteger("Please enter the 3 digit passenger code that you would like to delete", 3));
+				as.deletePassenger(pass3);
 				repeat = false;
 				break;
 
 			case "4":
-
+				List<Passenger> passengerList = new ArrayList<Passenger>();
+				passengerList = as.listPassengers();
+				System.out.println("Passenger List: ");
+				for (Passenger pass : passengerList) {
+					System.out.printf("%-15s %-15s\n","Code: " + pass.getId(), "Family Name: " + pass.getFamilyName());
+				}
 				repeat = false;
 				break;
 			default:

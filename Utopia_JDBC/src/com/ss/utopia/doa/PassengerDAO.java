@@ -40,8 +40,8 @@ public class PassengerDAO extends BaseDAO<Passenger> {
 		save("delete from passenger where id = ?", new Object[] { passenger.getId() });
 	}
 
-	public List<Passenger> readAllRoutes() throws ClassNotFoundException, SQLException {
-		return read("select * from airport", null);
+	public List<Passenger> readAllPassengers() throws ClassNotFoundException, SQLException {
+		return read("select * from passenger", null);
 	}
 
 	public Passenger readPassengerId(String passId) throws ClassNotFoundException, SQLException {

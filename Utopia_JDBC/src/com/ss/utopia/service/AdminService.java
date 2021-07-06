@@ -96,6 +96,34 @@ public class AdminService {
 		return airports;
 
 	}
+	
+	public List<Passenger> listPassengers() {
+		List<Passenger> passengers = new ArrayList<Passenger>();
+		Connection conn = null;
+		try {
+			conn = connUtil.getConnection();
+			PassengerDAO pdao = new PassengerDAO(conn);
+			passengers = pdao.readAllPassengers();
+			conn.commit();
+			return passengers;
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return passengers;
+
+	}
+
 
 	public List<Flight> listFlights() {
 		List<Flight> flights = new ArrayList<Flight>();
@@ -166,6 +194,50 @@ public class AdminService {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public void deleteFlight(Flight flight) {
+		Connection conn = null;
+		try {
+			conn = connUtil.getConnection();
+			FlightDAO fdao = new FlightDAO(conn);
+			fdao.deleteFlight(flight);
+			conn.commit();
+			System.out.println("Flight successfully deleted!");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
+	public void deletePassenger(Passenger pass) {
+		Connection conn = null;
+		try {
+			conn = connUtil.getConnection();
+			PassengerDAO pdao = new PassengerDAO(conn);
+			pdao.deletePassenger(pass);
+			conn.commit();
+			System.out.println("Passenger successfully deleted!");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
 	}
 
 	public void addFlight(Flight flight) {

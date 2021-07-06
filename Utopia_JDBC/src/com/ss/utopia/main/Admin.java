@@ -30,7 +30,7 @@ public class Admin {
 			System.out.println("Please select the category you would like to alter.");
 			System.out.println("1) Flights");
 			System.out.println("2) Seats");
-			System.out.println("3) Tickets and Passengers");
+			System.out.println("3) Passengers");
 			System.out.println("4) Airports");
 			System.out.println("5) Travelers");
 			System.out.println("6) Employees");

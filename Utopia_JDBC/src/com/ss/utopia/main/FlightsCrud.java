@@ -64,7 +64,7 @@ public class FlightsCrud extends CrudHelper {
 				}
 				fli1.setReservedSeats(getInteger("Please enter the number of reserved seats", 1000));
 				fli1.setRoute(null);
-				fli1.setSeatPrice(null);
+				//fli1.setSeatPrice(getInteger("Please enter the desired seat price", 500));
 				repeat = false;
 				break;
 			case "2":
@@ -72,7 +72,9 @@ public class FlightsCrud extends CrudHelper {
 				repeat = false;
 				break;
 			case "3":
-
+				Flight flight3 = new Flight();
+				flight3.setId(getExInteger("Please enter the 2 digit flight code of the flight you would like to delete!", 2));
+				as.deleteFlight(flight3);
 				repeat = false;
 				break;
 			case "4":
