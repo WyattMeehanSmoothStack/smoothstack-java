@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionUtil {
 	private static final String driver= "com.mysql.cj.jdbc.Driver";
-	private static final String url= "jdbc:mysql://localhost:3306/utopia";
+	private static final String url= "jdbc:mysql://localhost:3306/library";
 	private static final String username= "root";
 	private static final String password= "Ep5zXAhdb6Jnkp2W";
 
