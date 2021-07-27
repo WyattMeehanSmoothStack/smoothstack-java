@@ -15,17 +15,16 @@ public class Main {
 
 	/**
 	 * @param args
-	 * @throws SQLException 
+	 * @throws SQLException
 	 */
 	public static void main(String[] args) throws SQLException {
 		mainMenu();
-		System.out.println();
 	}
 
 	public static void mainMenu() throws SQLException {
 		System.out.println("Welcome to the Utopia Management System. Which category of a user are you?");
-		boolean repeat = true;
-		while (repeat) {
+
+		while (true) {
 			System.out.println("1) Employee/Agent");
 			System.out.println("2) Administrator");
 			System.out.println("3) Traveler");
@@ -36,24 +35,17 @@ public class Main {
 				continue;
 			case "2":
 				System.out.println("Administrator selected...\n");
-				Admin admin = new Admin(scanner);
-				admin.menu();
-				repeat = false;
 				break;
 			case "3":
 				System.out.println("Traveler selected...");
-				Traveler trav = new Traveler(scanner);
-				trav.menu();
-				repeat = false;
 				break;
 			default:
 				System.out.println("Invalid input, please enter the number of your selection!");
 				continue;
 			}
+			break;
 		}
 
 	}
-
-	
 
 }
