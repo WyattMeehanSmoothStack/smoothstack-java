@@ -19,6 +19,7 @@ public class Main {
 	 */
 	public static void main(String[] args) throws SQLException {
 		mainMenu();
+		System.out.println();
 	}
 
 	public static void mainMenu() throws SQLException {
