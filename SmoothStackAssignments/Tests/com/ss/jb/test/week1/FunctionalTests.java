@@ -20,7 +20,8 @@ public class FunctionalTests {
 		correct.add(2);
 		correct.add(3);
 		List<Integer> test = Functional.rightDigit(list);
-		assertEquals(test, correct);
+		assertEquals(test, correct); 
+		
 	}
 	
 	@Test
