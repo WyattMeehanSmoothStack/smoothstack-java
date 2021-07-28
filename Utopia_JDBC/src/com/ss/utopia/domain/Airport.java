@@ -9,4 +9,5 @@ package com.ss.utopia.domain;
  */
 public class Airport {
 	private String iataId;
+	
 }
