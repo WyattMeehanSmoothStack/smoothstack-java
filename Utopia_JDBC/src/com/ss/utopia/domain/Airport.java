@@ -4,7 +4,7 @@
 package com.ss.utopia.domain;
 
 /**
- * @author meeha
+ * @author Wyatt Meehan
  *
  */
 public class Airport {
